@@ -3,6 +3,9 @@ a:hover {
     text-decoration: none;
     color: #AA2205;
 }
+li{
+    list-style: none;
+}
 
 p {
     margin-bottom: 0;
@@ -180,4 +183,39 @@ section.login .registration-form-section .box-login {
 
 section.login .registration-form-section .gender {
     margin-right: 10px;
+}
+
+.admin-header h2,.admin-header ul,#sidebar .main-navigation-menu a ,#sidebar .navbar-title{
+    color: white;
+}
+#sidebar nav{
+    margin-top: 100px;
+}
+.dropdown-divider{
+    width: 150px;
+}
+.dashboard-manage,.dashboard-manage .total,.panel .panel-title{
+    color: white;
+}
+.dashboard-manage .panel{
+    padding: 50px;
+    border: 1px solid white;
+}
+
+.admin-header{
+    margin-top: 100px;
+}
+.admin-registration{
+    margin-top: 50%;
+}
+.login-form-section h2{
+    color: white;
+}
+.button-isuue button{
+    border: 1px solid #AA2205;
+}
+.copyright{
+    color: white;
+    margin-top: 18%;
+    margin-left: 47%;
 }

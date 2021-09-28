@@ -1,4 +1,7 @@
-<?php include("inc/header.php") ?>
+<?php
+include("inc/header.php");
+include("inc/queryfile.php");
+?>
 	<section class="login">
 		<div class="container">
 			<div class="row">
@@ -11,8 +14,8 @@
 								<p>Please enter your name and password to log in.<br/></p>
 								<div class="form-group">
 									<span class="input-icon">
-										<input type="text" class="form-control" name="username" placeholder="Username">
-										<i class="fa fa-user"></i>
+										<input type="email" class="form-control" name="email" placeholder="Enter Your Email">
+										<i class="fa fa-email"></i>
 										</span>
 								</div>
 								<div class="form-group form-actions">
@@ -34,6 +37,7 @@
 									</a>
 								</div>
 							</fieldset>
+							<input type="hidden" name="action" value="student-login">
 						</form>
 						<div class="copyright">
 							&copy; <span class="current-year"><?php echo date("Y");?></span><span class="text-bold text-uppercase"> LMS</span>. <span>All rights reserved</span>
