@@ -11,7 +11,7 @@ p {
     margin-bottom: 0;
 }
 
-.slider {
+body {
     background-image: url(../images/bg.jpg);
     height: 100vh;
     position: relative;

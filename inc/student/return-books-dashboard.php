@@ -1,7 +1,7 @@
 <div class="container-fluid container-fullw bg-white doctor-specialization">
     <div class="row">
         <div class="col-md-12 doctor-specialization-list">
-            <h5 class="text-center">Issued Book</h5>
+            <h5 class="text-center">Returned Book</h5>
             <table class="table table-hover" id="sample-table-1">
                 <thead>
                     <tr>
@@ -12,7 +12,6 @@
                         <th>Book Publication</th>
                         <th>Issue Date</th>
                         <th>return Date</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,15 +36,6 @@
                             <td><?php echo $data['book_publication']; ?></td>
                             <td><?php echo $data['issue_date']; ?></td>
                             <td><?php echo $data['return_date']; ?></td>
-                            <td>
-                                <form method="post">
-                                    <input type="hidden" name="rerurn_book_id" value="<?php echo $data['id']; ?>">
-                                    <input type="hidden" name="action" value="student-book-return">
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn pull-right" name="submit">Returned</button>
-                                    </div>
-                                </form>
-                            </td>
                         </tr>
                     <?php
                         $i++;

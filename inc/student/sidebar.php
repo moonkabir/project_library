@@ -1,21 +1,51 @@
 <div class="sidebar app-aside" id="sidebar">
     <div class="sidebar-container perfect-scrollbar ps-container ps-active-y">
-        <nav>					
+        <nav>
             <div class="navbar-title">
-                <span><h4>Main Navigation</h4></span>
+                <span>
+                    <h4>Main Navigation</h4>
+                </span>
             </div>
             <ul class="main-navigation-menu">
-                <li class="dropbtn"><a href="student-dashboard.php"><h5>Dashboard</h5></a></li>
-                <li><div class="dropdown-divider"></div></li>
-                <li class="dropbtn"><a href="student-profile.php"><h5>Profile</h5></a></li>
-                <li><div class="dropdown-divider"></div></li>
-                <li class="dropbtn"><a href="#"><h5>Book list</h5></a></li>
-                <li><div class="dropdown-divider"></div></li>
-                <li class="dropbtn"><a href="student-book-issue-manage.php"><h5>Book issue manage</h5></a></li>
-                <li><div class="dropdown-divider"></div></li>
-                <li class="dropbtn"><a href="student-book-issue.php"><h5>Book Issue</h5></a></li>
-                <li><div class="dropdown-divider"></div></li>
-                <li class="dropbtn"><a href="inc/logout.php"><h5>Log Out</h5></a></li>
+                <li class="dropbtn"><a href="student-dashboard.php">
+                        <h5>Dashboard</h5>
+                    </a></li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                </li>
+                <li class="dropbtn"><a href="student-profile.php">
+                        <h5>Profile</h5>
+                    </a></li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                </li>
+                <li class="dropbtn"><a href="student-book-list.php">
+                        <h5>Book list</h5>
+                    </a></li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                </li>
+                <li class="dropbtn"><a href="student-book-issue-manage.php">
+                        <h5>Book issue manage</h5>
+                    </a></li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                </li>
+                <li class="dropbtn"><a href="student-book-issue.php">
+                        <h5>Book Issue</h5>
+                    </a></li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                </li>
+                <li class="dropbtn"><a href="student-book-return-list.php">
+                        <h5>Book Return list</h5>
+                    </a></li>
+                <li>
+                    <div class="dropdown-divider"></div>
+                </li>
+                <li class="dropbtn"><a href="inc/logout.php">
+                        <h5>Log Out</h5>
+                    </a></li>
             </ul>
         </nav>
     </div>
