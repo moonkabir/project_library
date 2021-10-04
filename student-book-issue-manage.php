@@ -12,7 +12,7 @@ $connection = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 if(!$connection){
 	throw new Exception("Cannot connect to database");
 }
-$query = "SELECT * FROM `book_issue` where `student_id` = {$_student_id} and `return_book` = '0'";
+$query = "SELECT * FROM `book_issue` where `student_id` = {$_student_id}";
 $result = mysqli_query($connection,$query);
 ?>
 <div class="container-fluid admin-dashboard">

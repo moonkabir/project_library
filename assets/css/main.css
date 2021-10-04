@@ -197,11 +197,17 @@ section.login .registration-form-section .gender {
 .dashboard-manage,.dashboard-manage .total,.panel .panel-title{
     color: white;
 }
+.dashboard-manage .total{
+    text-decoration: underline;
+}
 .dashboard-manage .panel{
     padding: 50px;
-    border: 1px solid white;
+    border: 5px solid white;
+    background: rgba(0,0,0,0.5);
 }
-
+h2.StepTitle {
+    font-size: 22px;
+}
 .admin-header{
     margin-top: 100px;
 }

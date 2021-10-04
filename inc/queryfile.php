@@ -207,9 +207,20 @@ if (!$connection) {
         }
         header('Location: student-book-issue-manage.php');
     }elseif('student-book-return' == $action){
-        $rerurn_book_id = $_POST['rerurn_book_id']??'';
-        if($rerurn_book_id){
-            $query = "UPDATE `book_issue` SET `return_book`= '1' WHERE `id` = '{$rerurn_book_id}'";
+        $issues_book_id = $_POST['issues_book_id']??'';
+        $return_book_id = $_POST['return_book_id']??'';
+        $book_name = $_POST['book_name']??'';
+        $book_author = $_POST['book_author']??'';
+        $edition = $_POST['edition']??'';
+        $book_publication = $_POST['book_publication']??'';
+        $student_id = $_POST['student_id']??'';
+        $issue_date = $_POST['issue_date']??'';
+        $return_date = $_POST['return_date']??'';
+        $sudent_return_book = date("jS M, Y", strtotime("now"));
+        $query = "DELETE FROM `book_issue` WHERE `id` = '{$issues_book_id}'";
+        mysqli_query($connection, $query);
+        if($return_book_id){
+            $query = "INSERT INTO `book_return`(`book_id`, `book_name`, `book_author`, `edition`, `book_publication`, `student_id`, `issue_date`, `return_date`, `sudent_return_book`) VALUES ('{$return_book_id}','{$book_name}','{$book_author}','{$edition}','{$book_publication}','{$student_id}','{$issue_date}','{$return_date}','{$sudent_return_book}')";
             mysqli_query($connection, $query);
             header('Location: student-book-issue-manage.php');
         }

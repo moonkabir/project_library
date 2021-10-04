@@ -10,7 +10,7 @@
                         <th>Author Name</th>
                         <th class="center">Edition</th>
                         <th>Publication</th>
-                        <th>Book Issue</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +21,7 @@
                     while ($book_id = mysqli_fetch_assoc($book_ids)) {
                         $book[] = $book_id["book_id"];
                     }
+                    
                     if ($book != null) {
                         $query = "SELECT * FROM `books`";
                         $result = mysqli_query($connection, $query);

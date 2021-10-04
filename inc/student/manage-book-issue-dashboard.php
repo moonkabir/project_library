@@ -39,7 +39,15 @@
                             <td><?php echo $data['return_date']; ?></td>
                             <td>
                                 <form method="post">
-                                    <input type="hidden" name="rerurn_book_id" value="<?php echo $data['id']; ?>">
+                                    <input type="hidden" name="issues_book_id" value="<?php echo $data['id']; ?>">
+                                    <input type="hidden" name="return_book_id" value="<?php echo $data['book_id']; ?>">
+                                    <input type="hidden" name="book_name" value="<?php echo $data['book_name']; ?>">
+                                    <input type="hidden" name="book_author" value="<?php echo $data['book_author']; ?>">
+                                    <input type="hidden" name="edition" value="<?php echo $edition; ?>">
+                                    <input type="hidden" name="book_publication" value="<?php echo $data['book_publication']; ?>">
+                                    <input type="hidden" name="student_id" value="<?php echo $_student_id ?>">
+                                    <input type="hidden" name="issue_date" value="<?php echo $data['issue_date']; ?>">
+                                    <input type="hidden" name="return_date" value="<?php echo $data['return_date']; ?>">
                                     <input type="hidden" name="action" value="student-book-return">
                                     <div class="form-actions">
                                         <button type="submit" class="btn pull-right" name="submit">Returned</button>

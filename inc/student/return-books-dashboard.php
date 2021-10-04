@@ -11,21 +11,22 @@
                         <th>Book Edition</th>
                         <th>Book Publication</th>
                         <th>Issue Date</th>
-                        <th>return Date</th>
+                        <th>Return Date</th>
+                        <th>Student return Date</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $i = 1;
                     while ($data = mysqli_fetch_assoc($result)) {
-                        if ('1' == $data['book_edition']) {
-                            $edition = $data['book_edition'] . "st";
-                        } elseif ('2' == $data['book_edition']) {
-                            $edition = $data['book_edition'] . "nd";
-                        } elseif ('3' == $data['book_edition']) {
-                            $edition = $data['book_edition'] . "rd";
+                        if ('1' == $data['edition']) {
+                            $edition = $data['edition'] . "st";
+                        } elseif ('2' == $data['edition']) {
+                            $edition = $data['edition'] . "nd";
+                        } elseif ('3' == $data['edition']) {
+                            $edition = $data['edition'] . "rd";
                         } else {
-                            $edition = $data['book_edition'] . "th";
+                            $edition = $data['edition'] . "th";
                         }
                     ?>
                         <tr>
@@ -36,6 +37,8 @@
                             <td><?php echo $data['book_publication']; ?></td>
                             <td><?php echo $data['issue_date']; ?></td>
                             <td><?php echo $data['return_date']; ?></td>
+                            <td><?php echo $data['sudent_return_book']; ?></td>
+
                         </tr>
                     <?php
                         $i++;

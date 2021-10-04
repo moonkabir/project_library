@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2021 at 08:06 PM
+-- Generation Time: Oct 04, 2021 at 07:51 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -83,8 +83,6 @@ CREATE TABLE `book_issue` (
   `book_publication` varchar(100) NOT NULL,
   `student_id` int(11) NOT NULL,
   `student_mail` varchar(255) NOT NULL,
-  `fine` int(11) DEFAULT 0,
-  `return_book` int(1) NOT NULL DEFAULT 0,
   `issue_date` varchar(255) NOT NULL,
   `return_date` varchar(255) NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -93,13 +91,38 @@ CREATE TABLE `book_issue` (
 -- Dumping data for table `book_issue`
 --
 
-INSERT INTO `book_issue` (`id`, `book_name`, `book_id`, `book_author`, `book_edition`, `book_publication`, `student_id`, `student_mail`, `fine`, `return_book`, `issue_date`, `return_date`) VALUES
-(1, 'Software Engineering', 4, 'Martin. L Shooman', '1', 'MacGraw-Hill Book Comapany', 7, 'jui@gmail.com', 0, 0, '2020-10-16 11:13:05', '26th Oct, 2020'),
-(7, 'Introduction To The Theory Of Computation', 5, 'Michael Sipser', '3', 'Michael Sipser', 5, 'bhowchan@gmail.com', 0, 0, '2020-10-16 11:21:13', '26th Oct, 2020'),
-(6, 'NUMERICAL ANALYSIS', 1, 'A.R VASISHTHA VIPIN VASISHTHA', '4', 'KEDAR NATH RAM NATH', 6, 'liza@gmail.com', 0, 0, '2020-10-16 11:14:31', '26th Oct, 2020'),
-(8, 'Computer Graphics And Multimedia', 9, 'Simon J. Gibbs', '4', 'Environment and framework', 3, 'jannat@gmail.com', 0, 0, '2020-10-23 08:13:12', '2nd Nov, 2020'),
-(20, 'Software Engineering', 4, 'Martin. L Shooman', '1', 'MacGraw-Hill Book Comapany', 12, 'student@gmail.com', 0, 1, '3rd Oct, 2021', '14th Oct, 2021'),
-(21, 'Introduction To The Theory Of Computation', 5, 'Michael Sipser', '3', 'Michael Sipser', 12, 'student@gmail.com', 0, 0, '3rd Oct, 2021', '14th Oct, 2021');
+INSERT INTO `book_issue` (`id`, `book_name`, `book_id`, `book_author`, `book_edition`, `book_publication`, `student_id`, `student_mail`, `issue_date`, `return_date`) VALUES
+(1, 'Software Engineering', 4, 'Martin. L Shooman', '1', 'MacGraw-Hill Book Comapany', 7, 'jui@gmail.com', '2020-10-16 11:13:05', '26th Oct, 2020'),
+(7, 'Introduction To The Theory Of Computation', 5, 'Michael Sipser', '3', 'Michael Sipser', 5, 'bhowchan@gmail.com', '2020-10-16 11:21:13', '26th Oct, 2020'),
+(6, 'NUMERICAL ANALYSIS', 1, 'A.R VASISHTHA VIPIN VASISHTHA', '4', 'KEDAR NATH RAM NATH', 6, 'liza@gmail.com', '2020-10-16 11:14:31', '26th Oct, 2020'),
+(8, 'Computer Graphics And Multimedia', 9, 'Simon J. Gibbs', '4', 'Environment and framework', 3, 'jannat@gmail.com', '2020-10-23 08:13:12', '2nd Nov, 2020'),
+(25, 'Data Structures', 6, 'Seymour Lipschutz', '3', 'Schaum Series', 12, 'student@gmail.com', '4th Oct, 2021', '15th Oct, 2021');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `book_return`
+--
+
+CREATE TABLE `book_return` (
+  `id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL,
+  `book_name` varchar(255) NOT NULL,
+  `book_author` varchar(255) NOT NULL,
+  `edition` int(11) NOT NULL,
+  `book_publication` varchar(255) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `issue_date` varchar(255) NOT NULL,
+  `return_date` varchar(255) NOT NULL,
+  `sudent_return_book` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `book_return`
+--
+
+INSERT INTO `book_return` (`id`, `book_id`, `book_name`, `book_author`, `edition`, `book_publication`, `student_id`, `issue_date`, `return_date`, `sudent_return_book`) VALUES
+(2, 7, 'System Analysis And Design', 'Shin Yen Wu', 4, 'West Publishing company,1994', 12, '4th Oct, 2021', '15th Oct, 2021', '4th Oct, 2021');
 
 -- --------------------------------------------------------
 
@@ -153,6 +176,12 @@ ALTER TABLE `book_issue`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `book_return`
+--
+ALTER TABLE `book_return`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `registration`
 --
 ALTER TABLE `registration`
@@ -178,7 +207,13 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `book_issue`
 --
 ALTER TABLE `book_issue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `book_return`
+--
+ALTER TABLE `book_return`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `registration`
