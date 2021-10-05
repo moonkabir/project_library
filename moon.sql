@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2021 at 07:51 PM
+-- Generation Time: Oct 05, 2021 at 09:32 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -95,8 +95,7 @@ INSERT INTO `book_issue` (`id`, `book_name`, `book_id`, `book_author`, `book_edi
 (1, 'Software Engineering', 4, 'Martin. L Shooman', '1', 'MacGraw-Hill Book Comapany', 7, 'jui@gmail.com', '2020-10-16 11:13:05', '26th Oct, 2020'),
 (7, 'Introduction To The Theory Of Computation', 5, 'Michael Sipser', '3', 'Michael Sipser', 5, 'bhowchan@gmail.com', '2020-10-16 11:21:13', '26th Oct, 2020'),
 (6, 'NUMERICAL ANALYSIS', 1, 'A.R VASISHTHA VIPIN VASISHTHA', '4', 'KEDAR NATH RAM NATH', 6, 'liza@gmail.com', '2020-10-16 11:14:31', '26th Oct, 2020'),
-(8, 'Computer Graphics And Multimedia', 9, 'Simon J. Gibbs', '4', 'Environment and framework', 3, 'jannat@gmail.com', '2020-10-23 08:13:12', '2nd Nov, 2020'),
-(25, 'Data Structures', 6, 'Seymour Lipschutz', '3', 'Schaum Series', 12, 'student@gmail.com', '4th Oct, 2021', '15th Oct, 2021');
+(8, 'Computer Graphics And Multimedia', 9, 'Simon J. Gibbs', '4', 'Environment and framework', 3, 'jannat@gmail.com', '2020-10-23 08:13:12', '2nd Nov, 2020');
 
 -- --------------------------------------------------------
 
@@ -114,15 +113,19 @@ CREATE TABLE `book_return` (
   `student_id` int(11) NOT NULL,
   `issue_date` varchar(255) NOT NULL,
   `return_date` varchar(255) NOT NULL,
-  `sudent_return_book` varchar(255) NOT NULL
+  `sudent_return_book` varchar(255) NOT NULL,
+  `fine` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `book_return`
 --
 
-INSERT INTO `book_return` (`id`, `book_id`, `book_name`, `book_author`, `edition`, `book_publication`, `student_id`, `issue_date`, `return_date`, `sudent_return_book`) VALUES
-(2, 7, 'System Analysis And Design', 'Shin Yen Wu', 4, 'West Publishing company,1994', 12, '4th Oct, 2021', '15th Oct, 2021', '4th Oct, 2021');
+INSERT INTO `book_return` (`id`, `book_id`, `book_name`, `book_author`, `edition`, `book_publication`, `student_id`, `issue_date`, `return_date`, `sudent_return_book`, `fine`) VALUES
+(7, 8, 'Compiler Design', 'Alfred V.Aho,jeffery D.Ullman', 5, 'Principles of Compiler Design', 12, '5th Oct, 2021', '16th Oct, 2021', '5th Oct, 2021', 0),
+(8, 4, 'Software Engineering', 'Martin. L Shooman', 1, 'MacGraw-Hill Book Comapany', 12, '5th Oct, 2021', '16th Oct, 2021', '21st Oct, 2021', 100),
+(9, 9, 'Computer Graphics And Multimedia', 'Simon J. Gibbs', 4, 'Environment and framework', 12, '5th Oct, 2021', '16th Oct, 2021', '19th Oct, 2021', 60),
+(10, 6, 'Data Structures', 'Seymour Lipschutz', 3, 'Schaum Series', 12, '5th Oct, 2021', '16th Oct, 2021', '5th Oct, 2021', 0);
 
 -- --------------------------------------------------------
 
@@ -207,13 +210,13 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `book_issue`
 --
 ALTER TABLE `book_issue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `book_return`
 --
 ALTER TABLE `book_return`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `registration`

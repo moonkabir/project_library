@@ -4,6 +4,7 @@ if(!isset($_SESSION)){
 }
 include_once( 'config.php' );
 $action = $_POST['action'] ?? '';
+$search_book_list = $_POST['search_book_list'] ?? '';
 $connection = mysqli_connect( DB_SERVER, DB_USER, DB_PASS, DB_NAME );
 if (!$connection) {
     throw new Exception( "Cannot connect to database" );
@@ -217,10 +218,16 @@ if (!$connection) {
         $issue_date = $_POST['issue_date']??'';
         $return_date = $_POST['return_date']??'';
         $sudent_return_book = date("jS M, Y", strtotime("now"));
+        $fine = ($sudent_return_book - $return_date) * 20;
+        if($fine > 0){
+            $fine = $fine;
+        }else{
+            $fine = 0;
+        }
         $query = "DELETE FROM `book_issue` WHERE `id` = '{$issues_book_id}'";
         mysqli_query($connection, $query);
         if($return_book_id){
-            $query = "INSERT INTO `book_return`(`book_id`, `book_name`, `book_author`, `edition`, `book_publication`, `student_id`, `issue_date`, `return_date`, `sudent_return_book`) VALUES ('{$return_book_id}','{$book_name}','{$book_author}','{$edition}','{$book_publication}','{$student_id}','{$issue_date}','{$return_date}','{$sudent_return_book}')";
+            $query = "INSERT INTO `book_return`(`book_id`, `book_name`, `book_author`, `edition`, `book_publication`, `student_id`, `issue_date`, `return_date`, `sudent_return_book`,`fine`) VALUES ('{$return_book_id}','{$book_name}','{$book_author}','{$edition}','{$book_publication}','{$student_id}','{$issue_date}','{$return_date}','{$sudent_return_book}','{$fine}')";
             mysqli_query($connection, $query);
             header('Location: student-book-issue-manage.php');
         }

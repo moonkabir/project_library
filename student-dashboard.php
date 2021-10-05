@@ -1,11 +1,20 @@
 <?php 
 session_start();
-$_user_id = $_SESSION['id']??0;
-if(!$_user_id){
+$_student_id = $_SESSION['id']??0;
+if(!$_student_id){
     header('Location: index.php');
     die();
 }
-include('inc/headerwithoutnav.php')
+include('inc/headerwithoutnav.php');
+include('inc/config.php');
+
+$connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+if (!$connection) {
+	throw new Exception("Cannot connect to database");
+}
+$query = "SELECT * FROM `book_return` where `student_id` = {$_student_id}";
+$result = mysqli_query($connection, $query);
+
 ?>
 <div class="container-fluid dashboard">
     <div class="row">

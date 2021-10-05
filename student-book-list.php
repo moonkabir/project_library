@@ -12,6 +12,18 @@ $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
 if (!$connection) {
     throw new Exception("Cannot connect to database");
 }
+// $action = $_POST['action'] ?? '';
+// if("search_book" == $action){
+//     $search_book_list = $_POST['search_book_list'] ?? '';
+//     $query = "SELECT * FROM `books` WHERE book_name LIKE '%{$search_book_list}%'";
+//     $result = mysqli_query($connection, $query);
+//     while ($data = mysqli_fetch_assoc($result)) {
+//         var_dump($data['id']);
+//     }
+//     die();
+// }
+
+
 ?>
 <div class="container-fluid admin-dashboard">
     <div class="row">

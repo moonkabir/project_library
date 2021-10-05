@@ -13,6 +13,7 @@
                         <th>Issue Date</th>
                         <th>Return Date</th>
                         <th>Student return Date</th>
+                        <th>Fine</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +39,7 @@
                             <td><?php echo $data['issue_date']; ?></td>
                             <td><?php echo $data['return_date']; ?></td>
                             <td><?php echo $data['sudent_return_book']; ?></td>
+                            <td><?php echo $data['fine']; ?></td>
 
                         </tr>
                     <?php
