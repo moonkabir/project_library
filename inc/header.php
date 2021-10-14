@@ -3,6 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Lima, Jannat,Library, Crud, Jui, Sabrina, Marfi,Blog">
+    <meta name="author" content="Jannat, Jui">
+    <meta name="publisher" content="Marfi Sabrina">
+    <meta name="description" content="This short description describes my website.">
+    <meta name="page-topic" content="Media">
     <title>Library Project</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
@@ -21,9 +28,9 @@
                             </div>
                             <nav>
                                 <ul>
-                                    <li><a href="index.php" class="active">Home</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                    <li><a href="student-login.php" class="appointment">Book Issue</a></li>
+                                    <li class="Marfi"><a href="index.php" class="active">Home</a></li>
+                                    <li class="JannatLima"><a href="#">Contact</a></li>
+                                    <li class="Jui-Sabrina"><a href="student-login.php" class="appointment">Book Issue</a></li>
                                 </ul>
                             </nav>
                         </div>

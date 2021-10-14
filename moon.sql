@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2021 at 09:32 PM
+-- Generation Time: Oct 14, 2021 at 06:55 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `email`, `password`) VALUES
-(1, 'lima@gmail.com', '$2a$12$AEoVaY01psVLTkH6J0XvUuJE3Zqu2jJyoqOWekV5bfFlpoq0NkaXa');
+(1, 'admin@gmail.com', '$2a$12$AEoVaY01psVLTkH6J0XvUuJE3Zqu2jJyoqOWekV5bfFlpoq0NkaXa');
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,7 @@ CREATE TABLE `book_issue` (
   `student_id` int(11) NOT NULL,
   `student_mail` varchar(255) NOT NULL,
   `issue_date` varchar(255) NOT NULL,
-  `return_date` varchar(255) NOT NULL DEFAULT current_timestamp()
+  `return_date` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -125,7 +125,8 @@ INSERT INTO `book_return` (`id`, `book_id`, `book_name`, `book_author`, `edition
 (7, 8, 'Compiler Design', 'Alfred V.Aho,jeffery D.Ullman', 5, 'Principles of Compiler Design', 12, '5th Oct, 2021', '16th Oct, 2021', '5th Oct, 2021', 0),
 (8, 4, 'Software Engineering', 'Martin. L Shooman', 1, 'MacGraw-Hill Book Comapany', 12, '5th Oct, 2021', '16th Oct, 2021', '21st Oct, 2021', 100),
 (9, 9, 'Computer Graphics And Multimedia', 'Simon J. Gibbs', 4, 'Environment and framework', 12, '5th Oct, 2021', '16th Oct, 2021', '19th Oct, 2021', 60),
-(10, 6, 'Data Structures', 'Seymour Lipschutz', 3, 'Schaum Series', 12, '5th Oct, 2021', '16th Oct, 2021', '5th Oct, 2021', 0);
+(10, 6, 'Data Structures', 'Seymour Lipschutz', 3, 'Schaum Series', 12, '5th Oct, 2021', '16th Oct, 2021', '5th Oct, 2021', 0),
+(11, 7, 'System Analysis And Design', 'Shin Yen Wu', 4, 'West Publishing company,1994', 12, '14th Oct, 2021', '25th Oct, 2021', '14th Oct, 2021', 0);
 
 -- --------------------------------------------------------
 
@@ -210,13 +211,13 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `book_issue`
 --
 ALTER TABLE `book_issue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `book_return`
 --
 ALTER TABLE `book_return`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `registration`

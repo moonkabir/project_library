@@ -16,11 +16,11 @@ if (!$connection) {
 // if("search_book" == $action){
 //     $search_book_list = $_POST['search_book_list'] ?? '';
 //     $query = "SELECT * FROM `books` WHERE book_name LIKE '%{$search_book_list}%'";
-//     $result = mysqli_query($connection, $query);
-//     while ($data = mysqli_fetch_assoc($result)) {
-//         var_dump($data['id']);
-//     }
-//     die();
+//     $result_book = mysqli_query($connection, $query);
+//     // while ($data = mysqli_fetch_assoc($result_book)) {
+//     //     var_dump($data['id']);
+//     // }
+//     // die();
 // }
 
 

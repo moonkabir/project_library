@@ -7,7 +7,7 @@ $action = $_POST['action'] ?? '';
 $search_book_list = $_POST['search_book_list'] ?? '';
 $connection = mysqli_connect( DB_SERVER, DB_USER, DB_PASS, DB_NAME );
 if (!$connection) {
-    throw new Exception( "Cannot connect to database" );
+    throw new Exception( "Cannot connect to database.This is the project of lima,jannat,Marfi,Jui,Sabrina" );
 }else{
     if('admin-login' == $action) {
         $email = $_POST['email']??'';
@@ -233,16 +233,3 @@ if (!$connection) {
         }
     }
 }
-
-
-
-
-// echo "<pre>Debug: $query</pre>\n";
-// $result = mysqli_query($connection, $query);
-// if ( false===$result ) {
-//     printf("error: %s\n", mysqli_error($connection));
-// }
-// else {
-//     echo 'done.';
-// }
-// die();

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12 doctor-specialization-list">
             <h5 class="text-center">All Book List</h5>
-            <form class="form-group text-right d-flex justify-content-end" method="post">
+            <form class="form-group text-right d-flex justify-content-end" method="post" action="./student-books-search.php">
                 <input class="form-control" style="width: 20%;" type="text" name="search_book_list" placeholder="Search your book">
                 <input type="hidden" name="action" value="search_book">
                 <button type="submit" class="btn pull-right">Search</button>
@@ -26,7 +26,6 @@
                     while ($book_id = mysqli_fetch_assoc($book_ids)) {
                         $book[] = $book_id["book_id"];
                     }
-
                     if ($book != null) {
                         $query = "SELECT * FROM `books`";
                         $result = mysqli_query($connection, $query);

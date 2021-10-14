@@ -11,25 +11,27 @@
                         <tr>
                             <th class="center">ID</th>
                             <th>Name</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>Gender</th>
                             <th>Email</th>
+                            <th>Fine</th>
+                            <th>Issued Book</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php 
                         while ($data = mysqli_fetch_assoc($result)) {
-                    ?>
-                    <tr>
-                        <td><?php echo $data['id'];?></td>
-                        <td><?php echo $data['full_name'];?></td>
-                        <td><?php echo $data['address'];?></td>
-                        <td><?php echo $data['city'];?></td>
-                        <td><?php echo $data['gender'];?></td>
-                        <td><?php echo $data['email'];?></td>
-                    </tr>
-                    <?php
+                            $query_book_issue = "SELECT * FROM `book_issue` WHERE `id` = $data['id']";
+                            $result_book_issue = mysqli_query($connection,$query_book_issue);
+                            while ($data_book_issues = mysqli_fetch_assoc($result_book_issue)) {
+                            ?>
+                            <tr>
+                                <td><?php echo $data['id'];?></td>
+                                <td><?php echo $data['full_name'];?></td>
+                                <td><?php echo $data['email'];?></td>
+                                <td><?php echo $total_fine += $data_book_issues['fine'];?></td>
+                                <td><?php echo $data_book_issues['book_id'];?></td>
+                            </tr>
+                            <?php
+                            }
                         }
                         mysqli_close($connection);
                     ?>
