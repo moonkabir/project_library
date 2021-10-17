@@ -11,7 +11,11 @@ $connection = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 if(!$connection){
 	throw new Exception("Cannot connect to database");
 }
-$query = "SELECT * FROM `registration`";
+// $query = "SELECT * FROM `registration`";
+
+
+// $query = "SELECT registration.id, registration.full_name, registration.email, book_return.fine, book_return.student_id FROM registration LEFT JOIN book_return ON registration.id = book_return.student_id";
+$query = "SELECT * FROM `registration` ORDER BY `registration`.`id` ASC";
 $result = mysqli_query($connection,$query);
 ?>
 <div class="container-fluid admin-dashboard">

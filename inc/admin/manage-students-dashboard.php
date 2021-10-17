@@ -14,24 +14,61 @@
                             <th>Email</th>
                             <th>Fine</th>
                             <th>Issued Book</th>
+                            <th>Returned Book</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php 
                         while ($data = mysqli_fetch_assoc($result)) {
-                            $query_book_issue = "SELECT * FROM `book_issue` WHERE `id` = $data['id']";
-                            $result_book_issue = mysqli_query($connection,$query_book_issue);
-                            while ($data_book_issues = mysqli_fetch_assoc($result_book_issue)) {
                             ?>
                             <tr>
                                 <td><?php echo $data['id'];?></td>
                                 <td><?php echo $data['full_name'];?></td>
                                 <td><?php echo $data['email'];?></td>
-                                <td><?php echo $total_fine += $data_book_issues['fine'];?></td>
-                                <td><?php echo $data_book_issues['book_id'];?></td>
+                                <td>
+                                    <?php 
+                                        $query2 = "SELECT * FROM `book_return` WHERE student_id = {$data['id']}";
+                                        $result2 = mysqli_query($connection,$query2);
+                                        $fine = 0;
+                                        while ($data2 = mysqli_fetch_assoc($result2)) {
+                                            if($data2['fine']){
+                                                $fine += $data2['fine'];
+                                            }
+                                        }
+                                        echo ( $fine);
+                                    ?> 
+                                </td>
+                                <td>
+                                    <?php 
+                                        $query2 = "SELECT * FROM `book_issue` WHERE student_id = {$data['id']}";
+                                        $result2 = mysqli_query($connection,$query2);
+                                        $book_issue_content = "Yet not issued";
+                                        while ($data2 = mysqli_fetch_assoc($result2)) {
+                                            if($data2['book_id']){
+                                                echo $book_issue_content = $data2['book_id'].",";
+                                                $book_issue_content = '';
+                                            }
+                                        }
+                                        echo $book_issue_content;
+                                    ?> 
+                                </td>
+                                <td>
+                                    <?php 
+                                        $query2 = "SELECT * FROM `book_return` WHERE student_id = {$data['id']}";
+                                        $result2 = mysqli_query($connection,$query2);
+                                        $book_issue_content = "Has not returned anything yet";
+                                        while ($data2 = mysqli_fetch_assoc($result2)) {
+                                            if($data2['book_id']){
+                                                echo $book_issue_content = $data2['book_id'].",";
+                                                $book_issue_content = '';
+                                            }
+                                        }
+                                        echo $book_issue_content;
+                                    ?> 
+                                </td>
                             </tr>
                             <?php
-                            }
+                            // }
                         }
                         mysqli_close($connection);
                     ?>

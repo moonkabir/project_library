@@ -227,9 +227,23 @@ if (!$connection) {
         $query = "DELETE FROM `book_issue` WHERE `id` = '{$issues_book_id}'";
         mysqli_query($connection, $query);
         if($return_book_id){
-            $query = "INSERT INTO `book_return`(`book_id`, `book_name`, `book_author`, `edition`, `book_publication`, `student_id`, `issue_date`, `return_date`, `sudent_return_book`,`fine`) VALUES ('{$return_book_id}','{$book_name}','{$book_author}','{$edition}','{$book_publication}','{$student_id}','{$issue_date}','{$return_date}','{$sudent_return_book}','{$fine}')";
+            $query = "INSERT INTO `book_return`(`book_id`, `book_name`, `book_author`, `edition`, `book_publication`, `student_id`, `issue_date`, `return_date`, `sudent_return_book`,`fine`) VALUES ('{$return_book_id}','{$book_name}','{$book_author}','{$edition}','{$book_publication}','{$student_id}','{$issue_date}','{$return_date}','{$sudent_return_book}',{$fine})";
             mysqli_query($connection, $query);
             header('Location: student-book-issue-manage.php');
         }
     }
 }
+
+
+
+
+
+// echo "<pre>Debug: $query</pre>\n";
+// $result = mysqli_query($connection, $query);
+// if ( false===$result ) {
+//     printf("error: %s\n", mysqli_error($connection));
+// }
+// else {
+//     echo 'done.';
+// }
+// die();

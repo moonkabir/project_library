@@ -226,3 +226,6 @@ h2.StepTitle {
     margin-top: 18%;
     margin-left: 47%;
 }
+th,td{
+    text-align: center;
+}

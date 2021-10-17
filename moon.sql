@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2021 at 06:55 PM
+-- Generation Time: Oct 17, 2021 at 06:17 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -93,8 +93,8 @@ CREATE TABLE `book_issue` (
 
 INSERT INTO `book_issue` (`id`, `book_name`, `book_id`, `book_author`, `book_edition`, `book_publication`, `student_id`, `student_mail`, `issue_date`, `return_date`) VALUES
 (1, 'Software Engineering', 4, 'Martin. L Shooman', '1', 'MacGraw-Hill Book Comapany', 7, 'jui@gmail.com', '2020-10-16 11:13:05', '26th Oct, 2020'),
-(7, 'Introduction To The Theory Of Computation', 5, 'Michael Sipser', '3', 'Michael Sipser', 5, 'bhowchan@gmail.com', '2020-10-16 11:21:13', '26th Oct, 2020'),
-(6, 'NUMERICAL ANALYSIS', 1, 'A.R VASISHTHA VIPIN VASISHTHA', '4', 'KEDAR NATH RAM NATH', 6, 'liza@gmail.com', '2020-10-16 11:14:31', '26th Oct, 2020'),
+(7, 'Introduction To The Theory Of Computation', 5, 'Michael Sipser', '3', 'Michael Sipser', 8, 'bhowchan@gmail.com', '2020-10-16 11:21:13', '26th Oct, 2020'),
+(6, 'NUMERICAL ANALYSIS', 1, 'A.R VASISHTHA VIPIN VASISHTHA', '4', 'KEDAR NATH RAM NATH', 9, 'liza@gmail.com', '2020-10-16 11:14:31', '26th Oct, 2020'),
 (8, 'Computer Graphics And Multimedia', 9, 'Simon J. Gibbs', '4', 'Environment and framework', 3, 'jannat@gmail.com', '2020-10-23 08:13:12', '2nd Nov, 2020');
 
 -- --------------------------------------------------------
@@ -126,7 +126,10 @@ INSERT INTO `book_return` (`id`, `book_id`, `book_name`, `book_author`, `edition
 (8, 4, 'Software Engineering', 'Martin. L Shooman', 1, 'MacGraw-Hill Book Comapany', 12, '5th Oct, 2021', '16th Oct, 2021', '21st Oct, 2021', 100),
 (9, 9, 'Computer Graphics And Multimedia', 'Simon J. Gibbs', 4, 'Environment and framework', 12, '5th Oct, 2021', '16th Oct, 2021', '19th Oct, 2021', 60),
 (10, 6, 'Data Structures', 'Seymour Lipschutz', 3, 'Schaum Series', 12, '5th Oct, 2021', '16th Oct, 2021', '5th Oct, 2021', 0),
-(11, 7, 'System Analysis And Design', 'Shin Yen Wu', 4, 'West Publishing company,1994', 12, '14th Oct, 2021', '25th Oct, 2021', '14th Oct, 2021', 0);
+(11, 7, 'System Analysis And Design', 'Shin Yen Wu', 4, 'West Publishing company,1994', 12, '14th Oct, 2021', '25th Oct, 2021', '14th Oct, 2021', 0),
+(12, 7, 'System Analysis And Design', 'Shin Yen Wu', 4, 'West Publishing company,1994', 12, '17th Oct, 2021', '27th Oct, 2021', '31st Oct, 2021', 80),
+(13, 5, 'Introduction To The Theory Of Computation', 'Michael Sipser', 3, 'Michael Sipser', 12, '17th Oct, 2021', '27th Oct, 2021', '31st Oct, 2021', 80),
+(14, 8, 'Compiler Design', 'Alfred V.Aho,jeffery D.Ullman', 5, 'Principles of Compiler Design', 12, '17th Oct, 2021', '27th Oct, 2021', '17th Oct, 2021', 0);
 
 -- --------------------------------------------------------
 
@@ -211,13 +214,13 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `book_issue`
 --
 ALTER TABLE `book_issue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `book_return`
 --
 ALTER TABLE `book_return`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `registration`
